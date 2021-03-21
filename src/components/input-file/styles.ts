@@ -11,6 +11,8 @@ export const Button = styled.button`
   outline: none;
   border: none;
   animation: 1s ${UP_ANIMATION};
+  background-color: #512da8;
+  color: #ffffff;
 
 `;
 
