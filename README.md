@@ -1,4 +1,4 @@
-# PROJETO EM REACT RECORTAT E REDIMENSIONAR IMAGENS
+# PROJETO EM REACT RECORTAR E REDIMENSIONAR IMAGENS
 
 Projeto onde você por fazer upload de uma imagem e selecionar a area de recorte pelos evento do mouse down e up(segurar e soltar).
 
