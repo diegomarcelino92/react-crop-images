@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Button } from './styles';
 
 export interface ContainerProps {
   top?: number;
@@ -19,8 +19,8 @@ const CropTool: React.FC<ContainerProps> = ({
       top, left, width, height,
     }}
   >
-    {completed && <button type="button">Recortar</button>}
-    {completed && <button type="button">Cancelar</button>}
+    {completed && <Button type="button">Recortar</Button>}
+    {completed && <Button type="button">Cancelar</Button>}
   </Container>
 );
 

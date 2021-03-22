@@ -1,4 +1,5 @@
 import { InputHTMLAttributes } from 'react';
+import { PRIMARY_DARK } from 'src/utils/constants';
 import styled from 'styled-components';
 import { UP_ANIMATION } from '../../common-styles';
 
@@ -11,8 +12,9 @@ export const Button = styled.button`
   outline: none;
   border: none;
   animation: 1s ${UP_ANIMATION};
-  background-color: #512da8;
+  background-color: ${PRIMARY_DARK};
   color: #ffffff;
+  margin-top: 30px;
 
 `;
 

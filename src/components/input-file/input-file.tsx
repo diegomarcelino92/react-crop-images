@@ -5,13 +5,11 @@ import { Button, Input } from './styles';
 
 const InputFile: React.FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const { changeImage, image } = useFileContext();
+  const { changeImage } = useFileContext();
 
   function handleClick() {
     inputRef.current?.click();
   }
-
-  console.log(image);
 
   function handleChange({ target }: React.ChangeEvent<HTMLInputElement>) {
     const { files } = target;

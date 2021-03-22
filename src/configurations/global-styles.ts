@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { PRIMARY } from 'src/utils/constants';
+
 export const GlobalStyles = createGlobalStyle`
   body {
     height: 100vh;
@@ -7,17 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #f2f2fa;
-    /* background-image:
-      linear-gradient(
-        180deg,
-        #d1c4e9, 
-        #9fa8da 50%, 
-        #7986cb 78%,
-        #512da8 100%
-         ); */
-
-    
+    background-color: ${PRIMARY};
   }
 
   #root {

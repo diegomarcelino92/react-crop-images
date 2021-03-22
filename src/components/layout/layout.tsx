@@ -1,20 +1,14 @@
 import React from 'react';
 
-import InputFile from '../input-file';
-import PreviewImage from '../preview-image';
-
 import Footer from './components/footer';
 import Header from './components/header';
 import Main from './components/main';
 
-import { InputContainer } from './styles';
-
-const Layout: React.FC = () => (
+const Layout: React.FC = ({ children }) => (
   <>
     <Header />
     <Main>
-      <InputFile />
-      <PreviewImage />
+      {children}
     </Main>
     <Footer />
   </>

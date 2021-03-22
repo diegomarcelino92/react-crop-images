@@ -1,10 +1,11 @@
 import React, { useRef, useState, MouseEvent } from 'react';
 
 import { useFileContext } from '../../contexts/files-context';
+
 import CropTool from '../crop-tool';
 
 import {
-  Image, Container,
+  Image, Container, CropView,
 } from './styles';
 
 type Position = {
@@ -76,23 +77,25 @@ const PreviewImage: React.FC = () => {
   console.log(size, position);
 
   return (
-    <Container
-      onMouseDown={onMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseLeave}
-    >
+
+    <Container>
+      {!image && <h2>IMAGEM</h2>}
 
       {image && (
+      <CropView
+        onMouseDown={onMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
+      >
+
         <Image
           ref={ref}
           src={image as string}
-          alt="asdasdasd asdasda "
+          alt="Imagen"
           draggable="false"
         />
-      )}
 
-      {image && (
         <CropTool
           top={position.clientY}
           left={position.clientX}
@@ -100,8 +103,9 @@ const PreviewImage: React.FC = () => {
           height={size.height}
           completed={position.completed}
         />
-      )}
 
+      </CropView>
+      )}
     </Container>
   );
 };
