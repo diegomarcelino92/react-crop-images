@@ -1,6 +1,6 @@
 # PROJETO EM REACT RECORTAT E REDIMENSIONAR IMAGENS
 
-Projeto capta eventos do mouse, ao clicar segure e selecione a área de recorte.
+Projeto onde você por fazer upload de uma imagem e selecionar a area de recorte pelos evento do mouse down e up(segurar e soltar).
 
 ## Scripts
 
