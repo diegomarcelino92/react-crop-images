@@ -21,7 +21,7 @@ Executa os testes.
 Gera uma build para producão.
 
 ### `yarn eject`
-Scrip ejeta as configurações embutida do Babel e Webpack.
+Script ejeta as configurações embutida do Babel e Webpack.
 
 ## Mais
 
