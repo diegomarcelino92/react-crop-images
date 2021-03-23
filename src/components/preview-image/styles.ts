@@ -25,7 +25,7 @@ export const CropView = styled.div`
   width: auto;
 `;
 
-export const Image = styled.img<ImgHTMLAttributes<HTMLImageElement>>`
+export const ImagePreview = styled.img<ImgHTMLAttributes<HTMLImageElement>>`
   width: auto;
   height: auto;
   max-width: 450px;

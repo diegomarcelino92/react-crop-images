@@ -10,7 +10,6 @@ export const Container = styled.div`
   flex-direction: column;
   margin: 16px;
   animation: 1s ${UP_ANIMATION};
-  box-shadow: 0px 1px 3px #ffffff50;
   border-radius: 10px;
 
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1);

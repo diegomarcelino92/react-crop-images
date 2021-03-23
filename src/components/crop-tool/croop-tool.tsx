@@ -8,10 +8,12 @@ export interface ContainerProps {
   width: number;
   height: number;
   completed?: boolean;
+  onCrop: () => void;
+  onCancel: () => void;
 }
 
 const CropTool: React.FC<ContainerProps> = ({
-  top, left, width, height, completed,
+  top, left, width, height, completed, onCrop, onCancel,
 }) => (
   <Container
     completed={completed}
@@ -19,8 +21,22 @@ const CropTool: React.FC<ContainerProps> = ({
       top, left, width, height,
     }}
   >
-    {completed && <Button type="button">Recortar</Button>}
-    {completed && <Button type="button">Cancelar</Button>}
+    {completed && (
+    <Button
+      type="button"
+      onClick={onCrop}
+    >
+      Recortar
+    </Button>
+    )}
+    {completed && (
+    <Button
+      type="button"
+      onClick={onCancel}
+    >
+      Cancelar
+    </Button>
+    )}
   </Container>
 );
 

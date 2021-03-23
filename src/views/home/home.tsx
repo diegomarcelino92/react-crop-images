@@ -1,19 +1,32 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { useFileContext } from 'src/contexts/files-context';
 
 import InputFile from '../../components/input-file';
 import PreviewImage from '../../components/preview-image';
 import Tecnologies from '../../components/tecnlogies';
 
-const home: React.FC = () => (
-  <>
-    <Tecnologies />
+import { Link } from './styles';
 
-    <InputFile />
-    <PreviewImage />
+const Home: React.FC = () => {
+  const { download, image } = useFileContext();
 
-  </>
-);
+  return (
+    <>
+      <Tecnologies />
 
-export default home;
+      <InputFile />
+      <PreviewImage />
+
+      {download && (
+        <Link
+          download="image.png"
+          alt="Baixar imagem"
+          href={image as string}
+        />
+      )}
+    </>
+  );
+};
+
+export default Home;
