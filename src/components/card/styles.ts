@@ -13,7 +13,6 @@ export const Container = styled.div`
   border-radius: 10px;
 
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
-
 `;
 
 export const Image = styled.img`
@@ -31,7 +30,6 @@ export const ImageContainer = styled.div`
   background-color: ${PRIMARY_DARK};
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-
 `;
 
 export const TextContainer = styled.div`

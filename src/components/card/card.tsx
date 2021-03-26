@@ -1,7 +1,11 @@
 import React from 'react';
 
 import {
-  Container, Image, ImageContainer, TextContainer, Text,
+  Container,
+  Image,
+  ImageContainer,
+  TextContainer,
+  Text,
 } from './styles';
 
 interface CardProps {

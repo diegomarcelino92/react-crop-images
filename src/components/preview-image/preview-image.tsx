@@ -4,9 +4,7 @@ import { useFileContext } from '../../contexts/files-context';
 
 import CropTool from '../crop-tool';
 
-import {
-  ImagePreview, Container, CropView,
-} from './styles';
+import { ImagePreview, Container, CropView } from './styles';
 
 type Position = {
   clientX?: number;
@@ -15,11 +13,12 @@ type Position = {
   offsetY?: number;
   start?: boolean;
   completed?: boolean;
-}
+};
 
 type Size = {
-  width: number, height: number
-}
+  width: number;
+  height: number;
+};
 
 const PreviewImage: React.FC = () => {
   const { image, changeCropped } = useFileContext();
@@ -31,12 +30,7 @@ const PreviewImage: React.FC = () => {
   const [size, setSize] = useState<Size>(INITIAL_SIZE);
 
   function onMouseDown({
-    nativeEvent: {
-      clientY,
-      clientX,
-      offsetX,
-      offsetY,
-    },
+    nativeEvent: { clientY, clientX, offsetX, offsetY },
   }: MouseEvent<HTMLImageElement>) {
     if (!position.completed) {
       setPosition({
@@ -52,22 +46,20 @@ const PreviewImage: React.FC = () => {
   }
 
   function handleMouseMove({
-    nativeEvent: {
-      clientX,
-      clientY,
-    },
+    nativeEvent: { clientX, clientY },
   }: MouseEvent<HTMLImageElement>) {
     if (position.start && !position.completed) {
       setSize({
-        width: (clientX - (position.clientX || 0)),
-        height: (clientY - (position.clientY || 0)),
+        width: clientX - (position.clientX || 0),
+        height: clientY - (position.clientY || 0),
       });
     }
   }
 
   function handleMouseUp() {
     setPosition((old) => ({
-      ...old, completed: true,
+      ...old,
+      completed: true,
     }));
   }
 
@@ -138,12 +130,11 @@ const PreviewImage: React.FC = () => {
       changeCropped(canvas.toDataURL(), true);
     }
 
-    setPosition({ });
+    setPosition({});
     setSize(INITIAL_SIZE);
   }
 
   return (
-
     <Container>
       {!image && <h2>IMAGEM</h2>}
 
@@ -154,7 +145,6 @@ const PreviewImage: React.FC = () => {
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
         >
-
           <ImagePreview
             ref={ref}
             src={image as string}
@@ -163,20 +153,18 @@ const PreviewImage: React.FC = () => {
           />
 
           {position.start && (
-          <CropTool
-            top={position.clientY}
-            left={position.clientX}
-            width={size.width}
-            height={size.height}
-            completed={position.completed}
-            onCrop={onCrop}
-            onCancel={onCancel}
-          />
+            <CropTool
+              top={position.clientY}
+              left={position.clientX}
+              width={size.width}
+              height={size.height}
+              completed={position.completed}
+              onCrop={onCrop}
+              onCancel={onCancel}
+            />
           )}
-
         </CropView>
       )}
-
     </Container>
   );
 };

@@ -22,11 +22,9 @@ const InputFile: React.FC = () => {
   return (
     <Button onClick={handleClick}>
       Selecionar imagem
-      <Input
-        type="file"
-        ref={inputRef}
-        onChange={handleChange}
-      />
+      <Input type="file"
+ref={inputRef}
+onChange={handleChange} />
     </Button>
   );
 };

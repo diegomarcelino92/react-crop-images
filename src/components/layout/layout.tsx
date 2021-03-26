@@ -7,9 +7,7 @@ import Main from './components/main';
 const Layout: React.FC = ({ children }) => (
   <>
     <Header />
-    <Main>
-      {children}
-    </Main>
+    <Main>{children}</Main>
     <Footer />
   </>
 );

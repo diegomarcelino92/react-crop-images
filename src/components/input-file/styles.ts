@@ -15,7 +15,6 @@ export const Button = styled.button`
   background-color: ${PRIMARY_DARK};
   color: #ffffff;
   margin-top: 30px;
-
 `;
 
 export const Input = styled.input<InputHTMLAttributes<HTMLInputElement>>`

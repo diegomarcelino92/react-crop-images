@@ -13,5 +13,5 @@ ReactDOM.render(
       <App />
     </FilesContextProvider>
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );

@@ -13,29 +13,34 @@ export interface ContainerProps {
 }
 
 const CropTool: React.FC<ContainerProps> = ({
-  top, left, width, height, completed, onCrop, onCancel,
+  top,
+  left,
+  width,
+  height,
+  completed,
+  onCrop,
+  onCancel,
 }) => (
   <Container
     completed={completed}
     style={{
-      top, left, width, height,
+      top,
+      left,
+      width,
+      height,
     }}
   >
     {completed && (
-    <Button
-      type="button"
-      onClick={onCrop}
-    >
-      Recortar
-    </Button>
+      <Button type="button"
+onClick={onCrop}>
+        Recortar
+      </Button>
     )}
     {completed && (
-    <Button
-      type="button"
-      onClick={onCancel}
-    >
-      Cancelar
-    </Button>
+      <Button type="button"
+onClick={onCancel}>
+        Cancelar
+      </Button>
     )}
   </Container>
 );
