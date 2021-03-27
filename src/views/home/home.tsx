@@ -19,9 +19,7 @@ const Home: React.FC = () => {
       <PreviewImage />
 
       {download && (
-        <Link download="image.png"
-alt="Baixar imagem"
-href={image as string} />
+        <Link download="image.png" alt="Baixar imagem" href={image as string} />
       )}
     </>
   );

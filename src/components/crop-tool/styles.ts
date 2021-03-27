@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { PRIMARY_DARK } from 'src/utils/constants';
 
 export const Container = styled.div.attrs(
-  (props: { completed: boolean }) => props
+  (props: { completed: boolean }) => props,
 )`
   position: fixed;
   border: 3px dashed green;

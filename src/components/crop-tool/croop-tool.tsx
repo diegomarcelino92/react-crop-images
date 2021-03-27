@@ -31,14 +31,12 @@ const CropTool: React.FC<ContainerProps> = ({
     }}
   >
     {completed && (
-      <Button type="button"
-onClick={onCrop}>
+      <Button type="button" onClick={onCrop}>
         Recortar
       </Button>
     )}
     {completed && (
-      <Button type="button"
-onClick={onCancel}>
+      <Button type="button" onClick={onCancel}>
         Cancelar
       </Button>
     )}

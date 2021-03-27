@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   Container,
@@ -11,18 +11,30 @@ import {
 interface CardProps {
   src: string;
   text: string;
+  delay: number;
 }
 
-const Card: React.FC<CardProps> = ({ src, text }) => (
-  <Container>
-    <ImageContainer>
-      <Image src={src} />
-    </ImageContainer>
+const Card: React.FC<CardProps> = ({ src, text, delay }) => {
+  const [show, setShow] = useState(delay ? 'hidden' : 'visible');
 
-    <TextContainer>
-      <Text>{text}</Text>
-    </TextContainer>
-  </Container>
-);
+  useEffect(() => {
+    if (delay)
+      setTimeout(() => {
+        setShow('visible');
+      }, delay);
+  }, [delay]);
+
+  return (
+    <Container show={show}>
+      <ImageContainer>
+        <Image src={src} />
+      </ImageContainer>
+
+      <TextContainer>
+        <Text>{text}</Text>
+      </TextContainer>
+    </Container>
+  );
+};
 
 export default Card;

@@ -1,18 +1,23 @@
 import { UP_ANIMATION } from 'src/common-styles';
-import styled from 'styled-components';
+
+import styled, { css } from 'styled-components';
 
 import { PRIMARY_DARK, PRIMARY_LIGHT } from 'src/utils/constants';
 
-export const Container = styled.div`
+export const Container = styled.div<{ show: string }>`
   width: 300px;
   height: fit-content;
   display: flex;
   flex-direction: column;
   margin: 16px;
-  animation: 1s ${UP_ANIMATION};
   border-radius: 10px;
 
-  transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+  visibility: ${(props) => props.show};
+  ${(props) =>
+    props.show === 'visible' &&
+    css`
+      animation: 1s ${UP_ANIMATION};
+    `}
 `;
 
 export const Image = styled.img`
@@ -23,6 +28,7 @@ export const Image = styled.img`
 export const Text = styled.p`
   padding: 8px;
   color: #fff;
+  font-weight: bold;
   flex: 1;
 `;
 
